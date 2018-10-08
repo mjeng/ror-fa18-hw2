@@ -1,1 +1,15 @@
 <!-- Your code here -->
+<% if not @w.nil? %>
+<ul>
+    <li>City: <%= @city %></li>
+    <li>Temperature: <%= @temp %></li>
+    <li>Description: <%= @description %></li>
+</ul>
+<% end %>
+<%= form_with local: true, method: "get" do |form| %>
+	<%= form.text_field :city %>
+	<%= form.submit %>
+<% end %>
+
+
+<%= City.all %>

@@ -18,6 +18,11 @@ class City
     end
 
     def update(update_params)
-
+        if update_params.key?(:landmark) and not update_params[:landmark].empty?
+            @landmark = update_params[:landmark]
+        end
+        if update_params.key?(:population) and not update_params[:population].empty?
+            @population = update_params[:population]
+        end
     end
 end

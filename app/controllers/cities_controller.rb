@@ -57,7 +57,17 @@ class CitiesController < ApplicationController
         redirect_to :action => "view"
     end
 
+
+    def update_form
+        @city = params[:city]
+        render :update
+    end
+
     def update
+        city = params[:city]
+        if City.all.key?(city.to_sym)
+            City.all[city.to_sym].update(params)
+        end
         redirect_to :action => "view"
     end
 

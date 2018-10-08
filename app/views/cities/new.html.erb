@@ -1,8 +1,8 @@
 <%= @params %>
 <%= @method %>
 <%= form_with url: "create", local: true, method: "post" do |form| %>
-	<%= form.text_field :name %>
-    <%= form.text_field :landmark %>
-    <%= form.text_field :population %>
-	<%= form.submit %>
+	<p>City Name: <%= form.text_field :name %></p>
+    <p>Landmark: <%= form.text_field :landmark %></p>
+    <p>Population: <%= form.text_field :population %></p>
+	<%= form.submit "Submit" %>
 <% end %>

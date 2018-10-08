@@ -58,9 +58,7 @@ class CitiesController < ApplicationController
     end
 
     def update
-        if request.method == "GET"
-            @test = "here"
-        end
+        redirect_to :action => "view"
     end
 
 

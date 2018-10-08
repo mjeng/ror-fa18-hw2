@@ -1,0 +1,11 @@
+<% if @cities.nil? %>
+    <p>Input city not in database</p>
+<% else %>
+    <% @cities.each_pair do |k, v| %>
+        <h3><%= k %></h3>
+        <p>Population: <%= v.population %></p>
+        <p>Landmark: <%= v.landmark %></p>
+        <h3>-----------------------------------------</h3>
+        <br>
+    <% end %>
+<% end %>

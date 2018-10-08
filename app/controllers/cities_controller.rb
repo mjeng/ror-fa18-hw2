@@ -1,17 +1,6 @@
 class CitiesController < ApplicationController
 
     def view
-        # City.new(
-        #     name: "city#{rand(10)}",
-        #     landmark: "landmark",
-        #     population: 25
-        # ).save
-        # City.new(
-        #     name: "Berkeley",
-        #     landmark: "landmark",
-        #     population: 25
-        # ).save
-
         @city_name = params[:city]
         if not @city_name.nil?
             # individual city
@@ -28,13 +17,10 @@ class CitiesController < ApplicationController
     end
 
     def new
-        @params = params
-        @method = request.method
-        # do stuff
+        # we don't need to do anything
     end
 
     def create
-        # create city
         name = params[:name]
         landmark = params[:landmark]
         population = params[:population]
@@ -57,7 +43,6 @@ class CitiesController < ApplicationController
         redirect_to :action => "view"
     end
 
-
     def update_form
         @city = params[:city]
         render :update
@@ -70,6 +55,5 @@ class CitiesController < ApplicationController
         end
         redirect_to :action => "view"
     end
-
 
 end

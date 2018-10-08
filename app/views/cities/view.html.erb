@@ -13,7 +13,7 @@
         <% else %>
             <p>No weather data available</p>
         <% end %>
-        <%= button_to("Update", "update", method: "get", params: {city: k}) %>
+        <%= button_to("Update", "/cities/update", method: "get", params: {city: k}) %>
         <h3>-----------------------------------------</h3>
         <br>
     <% end %>

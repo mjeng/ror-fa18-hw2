@@ -1,10 +1,18 @@
-<% if @cities.nil? %>
-    <p>Input city not in database</p>
+<% if not @notice.nil? %>
+    <%= @notice %>
+<% end %>
+<% if @cities.nil? or @cities.empty? %>
+    <p>Create a city dude you have none ://</p>
 <% else %>
     <% @cities.each_pair do |k, v| %>
         <h3><%= k %></h3>
         <p>Population: <%= v.population %></p>
         <p>Landmark: <%= v.landmark %></p>
+        <% if not v.weather.nil? and not v.weather[:temperature].nil? %>
+            <p>Temperature (Celsius): <%= v.weather[:temperature] - 273 %></p>
+        <% else %>
+            <p>No weather data available</p>
+        <% end %>
         <h3>-----------------------------------------</h3>
         <br>
     <% end %>
